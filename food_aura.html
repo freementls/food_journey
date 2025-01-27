@@ -1,0 +1,452 @@
+<html>
+<head>
+<title>food aura</title>
+<script src="jquery-3.7.1.js"></script>
+<script src="jcanvas21mod.js"></script>
+<script>
+$(document).ready(function() {
+
+center_x = 200;
+center_y = 200;
+radius_0 = 50;
+radius_1 = 75;
+radius_2 = 100;
+radius_3 = 125;
+radius_4 = 150;
+red_radius = 150;
+orange_radius = 135;
+yellow_radius = 120;
+green_radius = 105;
+blue_radius = 90;
+indigo_radius = 75;
+violet_radius = 60;
+
+$('#myCanvas').prop({ width: 800, height: 500 });
+
+draw();
+
+const red1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(255, 0, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const red2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(255, 0, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const red3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(255, 0, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const red4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(255, 0, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+const orange1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(255, 128, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const orange2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(255, 128, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const orange3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(255, 128, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const orange4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(255, 128, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+const yellow1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(255, 240, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const yellow2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(255, 240, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const yellow3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(255, 240, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const yellow4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(255, 240, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+const green1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(0, 255, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const green2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(0, 255, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const green3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(0, 255, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const green4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(0, 255, 0, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+const blue1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(0, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const blue2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(0, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const blue3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(0, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const blue4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(0, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+const indigo1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(128, 128, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const indigo2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(128, 128, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const indigo3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(128, 128, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const indigo4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(128, 128, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+const violet1 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_1,
+  c1: 'rgba(255, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const violet2 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_2,
+  c1: 'rgba(255, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const violet3 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_3,
+  c1: 'rgba(255, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+const violet4 = $('#myCanvas').createGradient({
+  x1: center_x, y1: center_y,
+  x2: center_x, y2: center_y,
+  r1: radius_0,
+  r2: radius_4,
+  c1: 'rgba(255, 0, 255, 0.50)',
+  c2: 'rgba(255, 255, 255, 0.0)',
+});
+
+$('select').on('change', function(e) {
+	//console.log('select changed');
+	update(e);
+});
+
+function update(e) {
+	draw();
+}
+
+function draw() {
+$('#myCanvas').removeLayers();
+$('#myCanvas').clearCanvas();
+
+violet_value = $('select[name="violet"]').val();
+//console.log('violet_value: ' + violet_value);
+if(violet_value == 'violet0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = violet_value;
+	fillStyle = eval(violet_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+indigo_value = $('select[name="indigo"]').val();
+//console.log('indigo_value: ' + indigo_value);
+if(indigo_value == 'indigo0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = indigo_value;
+	fillStyle = eval(indigo_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+blue_value = $('select[name="blue"]').val();
+//console.log('blue_value: ' + blue_value);
+if(blue_value == 'blue0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = blue_value;
+	fillStyle = eval(blue_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+green_value = $('select[name="green"]').val();
+//console.log('green_value: ' + green_value);
+if(green_value == 'green0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = green_value;
+	fillStyle = eval(green_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+yellow_value = $('select[name="yellow"]').val();
+//console.log('yellow_value: ' + yellow_value);
+if(yellow_value == 'yellow0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = yellow_value;
+	fillStyle = eval(yellow_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+orange_value = $('select[name="orange"]').val();
+//console.log('orange_value: ' + orange_value);
+if(orange_value == 'orange0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = orange_value;
+	fillStyle = eval(orange_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+red_value = $('select[name="red"]').val();
+//console.log('red_value: ' + red_value);
+if(red_value == 'red0') { // do not draw it
+	//fillStyle = false;
+} else {
+	//fillStyle = red_value;
+	fillStyle = eval(red_value);
+	$('#myCanvas').drawArc({
+		fillStyle: fillStyle,
+		x: center_x, y: center_y,
+		radius: 200,
+	});
+}
+
+// draw the person in the middle
+$('#myCanvas').drawImage({
+	layer: true,
+	source: 'yoga_seated.png',
+	x: center_x, y: center_y,
+	width: 100, height: 100,
+});
+
+} // end of draw
+
+});
+</script>
+<style>
+canvas { float: left; border: 1px solid green; } /* for the messages */
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="150">
+  <p>This is fallback content
+  for users of assistive technologies
+  or of browsers that don't have
+  full support for the Canvas API.</p>
+</canvas>
+<p id="messages"></p>
+<label for="red">Red:</label>
+<select name="red">
+<option value="red0">0</option>
+<option value="red1">1</option>
+<option value="red2">2</option>
+<option value="red3">3</option>
+<option value="red4">4</option>
+</select><br />
+<label for="orange">Orange:</label>
+<select name="orange">
+<option value="orange0">0</option>
+<option value="orange1">1</option>
+<option value="orange2">2</option>
+<option value="orange3">3</option>
+<option value="orange4">4</option>
+</select><br />
+<label for="yellow">Yellow:</label>
+<select name="yellow">
+<option value="yellow0">0</option>
+<option value="yellow1">1</option>
+<option value="yellow2">2</option>
+<option value="yellow3">3</option>
+<option value="yellow4">4</option>
+</select><br />
+<label for="green">Green:</label>
+<select name="green">
+<option value="green0">0</option>
+<option value="green1">1</option>
+<option value="green2">2</option>
+<option value="green3">3</option>
+<option value="green4">4</option>
+</select><br />
+<label for="blue">Blue:</label>
+<select name="blue">
+<option value="blue0">0</option>
+<option value="blue1">1</option>
+<option value="blue2">2</option>
+<option value="blue3">3</option>
+<option value="blue4">4</option>
+</select><br />
+<label for="indigo">Indigo:</label>
+<select name="indigo">
+<option value="indigo0">0</option>
+<option value="indigo1">1</option>
+<option value="indigo2">2</option>
+<option value="indigo3">3</option>
+<option value="indigo4">4</option>
+</select><br />
+<label for="violet">Violet:</label>
+<select name="violet">
+<option value="violet0">0</option>
+<option value="violet1">1</option>
+<option value="violet2">2</option>
+<option value="violet3">3</option>
+<option value="violet4">4</option>
+</select><br />
+</body>
+</html>
+
